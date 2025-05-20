@@ -14,7 +14,7 @@ global_epoch = 100
 batchsize = 16
 
 # 创建保存模型的目录
-save_dir = r'D:\HuYan\Data_and_model\BT\savemodel\validate520\densenet121'
+save_dir = r'path of model save'
 os.makedirs(save_dir, exist_ok=True)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -28,10 +28,10 @@ data_transforms = transforms.Compose([
 ])
 
 client_dataset = []
-for root in [r'D:\HuYan\Data_and_model\BT\client1',
-             r'D:\HuYan\Data_and_model\BT\client2',
-             r'D:\HuYan\Data_and_model\BT\client3',
-             r'D:\HuYan\Data_and_model\BT\client4']:
+for root in [r'path of client1',
+             r'path of client2',
+             r'path of client3',
+             r'path of client4']:
     client_dataset.append(ImageFolder(root, transform=data_transforms))
 loader3 = []
 for d in client_dataset:
